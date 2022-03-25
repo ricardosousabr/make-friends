@@ -1,0 +1,21 @@
+#create-room {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .card {
+      width: 100%;
+      max-width: 500px;
+      border: solid 1px #980de9;
+      border-radius: 10px;
+    }
+  }
+}
