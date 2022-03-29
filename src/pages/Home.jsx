@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from '../context/Auth';
 
 import googleImg from '../assets/img/google-icon.svg';
@@ -7,13 +7,13 @@ import googleImg from '../assets/img/google-icon.svg';
 import '../styles/home.scss';
 
 export function Home() {
-  const createRom = useNavigate()
+  const createRom = useNavigate();
 
   const { user, loginUser } = useContext(AuthContext);
 
   async function handleLoginButton() {
-    await loginUser()
-    createRom('/create-room')
+    await loginUser();
+    createRom('/create-room');
   }
 
   return (
@@ -22,16 +22,16 @@ export function Home() {
         <div>
           <p>{user.name}</p>
           <p>{user.id}</p>
-        <p>
-          Bem vindo ao Make friends, junte-se a varias pessoas e se divirta.
-        </p>
+          <p>
+            Bem vindo ao Make friends, junte-se a varias pessoas e se divirta.
+          </p>
         </div>
         <div>
-        <button onClick={handleLoginButton}>
-          <img src={googleImg} alt="" />  Entre com o Google
-        </button>
+          <button onClick={handleLoginButton}>
+            <img src={googleImg} alt="" /> Entre com o Google
+          </button>
         </div>
       </main>
     </div>
-  )
+  );
 }

@@ -1,12 +1,11 @@
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { Home } from './pages/Home';
 import { CreateRoom } from './pages/CreateRoom';
 import { AuthContextProvider } from './context/Auth';
 
-
 function App() {
-
   return (
     <div className="App">
       <BrowserRouter>
