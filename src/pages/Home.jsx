@@ -12,7 +12,9 @@ export function Home() {
   const { user, loginUser } = useContext(AuthContext);
 
   async function handleLoginButton() {
-    await loginUser();
+    if (!user) {
+      await loginUser();
+    }
     createRom('/create-room');
   }
 
@@ -20,8 +22,6 @@ export function Home() {
     <div id="home">
       <main>
         <div>
-          <p>{user.name}</p>
-          <p>{user.id}</p>
           <p>
             Bem vindo ao Make friends, junte-se a varias pessoas e se divirta.
           </p>
