@@ -15,7 +15,7 @@ export function Home() {
     if (!user) {
       await loginUser();
     }
-    createRom('/create-room');
+    createRom('/rooms/new');
   }
 
   return (

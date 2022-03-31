@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/Auth';
 import { database } from '../services/firebase';
 import '../styles/createRoom.scss';
@@ -6,6 +7,7 @@ import '../styles/createRoom.scss';
 export function CreateRoom() {
   const [newRoom, setNewRoom] = useState('');
   const { user } = useContext(AuthContext);
+  const Navigate = useNavigate();
 
   async function handleCreateRoom() {
     if (newRoom.trim() === '') {
@@ -19,6 +21,7 @@ export function CreateRoom() {
       authorName: user.name,
     });
 
+    Navigate(`/rooms/${firebaseRoom.key}}`);
     console.log(firebaseRoom);
   }
 
