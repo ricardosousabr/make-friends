@@ -1,0 +1,20 @@
+ul {
+  transform: translate(-200px, 0);
+
+  li {
+    position: absolute;
+  }
+}
+
+.menu {
+  transform: translate(0, 0);
+
+  li {
+    position: relative;
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
