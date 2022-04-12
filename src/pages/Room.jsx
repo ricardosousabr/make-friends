@@ -1,9 +1,10 @@
 import React from 'react';
+import { Menu } from '../components/Menu';
 
 export function Room() {
   return (
     <div>
-      <h1>Sala</h1>
+      <Menu />
     </div>
   );
 }
